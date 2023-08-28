@@ -6,10 +6,8 @@ import NavBar from '../components/NavBar';
 const Choice =()=>{
     return(
         <>
-        <NavBar />
             <div class="wrapper">
                 <div class="container main1">
-                    
                      <div class="row row1">
                         <div class="card images" style={{width: '18rem'}}>
                             <div class="card-body">

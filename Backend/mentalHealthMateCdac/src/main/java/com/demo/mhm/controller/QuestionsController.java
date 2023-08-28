@@ -17,9 +17,9 @@ import com.demo.mhm.service.QuestionServiceI;
 public class QuestionsController {
 	@Autowired
 	QuestionServiceI qsi;
-	@PostMapping("/question")
-	public ResponseEntity<?> siteReportAnswers(@RequestBody SiteGeneratedReport sgr) {
-		return ResponseEntity.ok(qsi.saveAnswer(sgr));	
+	@PostMapping("/question/{id}")
+	public ResponseEntity<?> siteReportAnswers(@PathVariable("id") int id,@RequestBody SiteGeneratedReport sgr) {
+		return ResponseEntity.ok(qsi.saveAnswer(id,sgr));	
 	}
 	@GetMapping("/question/sitereport/{id}")
 	public ResponseEntity<?> getSiteGeneratedReport(@PathVariable("id") int id) {

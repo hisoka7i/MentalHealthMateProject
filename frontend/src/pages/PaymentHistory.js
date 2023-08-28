@@ -7,6 +7,7 @@ import {CiCalendarDate,CiMoneyCheck1} from 'react-icons/ci'
 import NavBar from '../components/NavBar';
 import axios from 'axios';
 import { URL } from '../config';
+import './styles/Tables.css';
 
 const PaymentHistory=()=>{
 const [tableData,setResData]=useState([]);

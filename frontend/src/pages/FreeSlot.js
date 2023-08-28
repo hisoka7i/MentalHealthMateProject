@@ -53,7 +53,7 @@ const FreeSlot=()=>{
             let status = table.slotStatus.toString();
            return(
         <tr key={table.slotId}>
-            <th scope="row">{table.slotId}</th>
+            <th scope="row">{i+1}</th>
             <td>{table.slot}</td>
             <td>{status}</td>
           </tr>
@@ -74,7 +74,7 @@ const FreeSlot=()=>{
         <tr>
         <th>Slot ID</th>
         <th>Slot</th>
-        <th>Free Slot?</th>
+        <th>Avilable Slot?</th>
         <th></th>
         </tr>
         </thead>

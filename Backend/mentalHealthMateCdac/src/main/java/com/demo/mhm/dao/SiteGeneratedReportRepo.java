@@ -14,5 +14,4 @@ public interface SiteGeneratedReportRepo extends JpaRepository<SiteGeneratedRepo
 SiteGeneratedReport getByUserId(int id);
 @Query(value="select * from site_generated_table where user4_id=:id",nativeQuery=true)
 List<SiteGeneratedReport> findAllById(int id);
-
 }

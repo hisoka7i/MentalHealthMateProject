@@ -36,7 +36,6 @@ function calculateChartData(patientData) {
       { name: 'parenoia', students: parenoia },
       { name: 'ptsd', students: ptsd },
     ];
-	console.log(data)
 	setCharData(data);
   }
 
@@ -61,7 +60,7 @@ function calculateChartData(patientData) {
             <div className="col col-md-auto col-sm-auto">
                 <h3>Your Report based on your answers</h3>
               <PieChart width={600} height={450}>
-                <Pie data={chartData} dataKey="students" nameKey="name" label outerRadius={175} fill="#5C4B99" />
+                <Pie data={chartData} dataKey="students" nameKey="name" label outerRadius={175} fill={['#FF5733', '#5EAD2A', '#FFC300', '#0074D9', '#FF851B', '#D67BFF']} />
               </PieChart>
               <div style={{display:"inline"}} class="input-field">
                 <p style={{display:"inline"}} type="text" id="text" class="input">Patient last answers to the questions were:</p>

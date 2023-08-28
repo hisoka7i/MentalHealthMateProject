@@ -45,6 +45,18 @@ const AuthorizeAppointments=()=>{
     return <Login />
   }
 }
+
+const AuthorizeQuestion =()=>{
+  const loginStatus = sessionStorage['loginStatus'];
+  console.log(loginStatus);
+  if(loginStatus=='2'){
+    return <Question />
+  }
+  else{
+    return <Login />
+  }
+}
+
 const AuthorizeFreeSlot=()=>{
   const loginStatus = sessionStorage['loginStatus'];
   if(loginStatus=='1'){
@@ -116,6 +128,7 @@ const App = () => {
       <Route path="/patient" element={<AuthorizePatient />}/>  
       <Route path="/error" element={<ErrorPage/>} /> 
       <Route path="/userSiteReport" element={<AuthorizeSiteReport />} />
+      <Route path="/userQuestions" element={<AuthorizeQuestion />} />
       {/* <Route path="/medicalhistory" element={<MedicalHistory/>} />  */}
 
     </Routes>

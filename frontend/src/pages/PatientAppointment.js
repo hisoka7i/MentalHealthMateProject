@@ -4,9 +4,12 @@ import { URL } from '../config';
 import NavBar from '../components/NavBar';
 import { PieChart, Pie } from 'recharts';
 import {AiOutlineUser} from 'react-icons/ai';
+import {useNavigate} from 'react-router';
+
 
 
 const PatientAppointment = () => {
+  const navigate = useNavigate();
   const [patient, setPatient] = useState([]);
   const [allData, setAllData] = useState({
     chartData: [],
@@ -23,18 +26,24 @@ const PatientAppointment = () => {
     medications=e.target.value;
   }
   function sendUpdate(){
-    //axios.post()
+    console.log(patientID)
+    axios.post(`${URL}/DocAppointment/patient/${patient2}/${diagnosis}/${medications}`).then((response)=>{
+      const status = response.status;
+      if(status==200){
+        navigate("/");
+      }
+    })
   }
 
   var patient2 = sessionStorage['patientName'];
-
+  var patientID=0;
   function PatientData() {
     
     return axios.get(`${URL}/DocAppointment/patient/${patient2}`).then((response) =>response.data);
   }
 
 function calculateChartData(patientData) {
-  console.log(patientData.medicalHistory.medicalHistory.user3.id);
+    patientID = patientData.medicalHistory.medicalHistory.user3.id;
     const anxity = patientData.siteReport.anxity * 11;
     const autism = patientData.siteReport.autism * 11;
     const hyperActivity = patientData.siteReport.hyperActivity * 11;
@@ -90,7 +99,7 @@ function calculateChartData(patientData) {
             <div className="col col-md-auto col-sm-auto">
                 <div class="input-box">
                    <header><h2>Enter New Diagnosis<AiOutlineUser /></h2></header>
-                   <table>
+                   <table className='table'>
                     <tr>
                         <td>
                         <div class="input-field">
@@ -106,11 +115,23 @@ function calculateChartData(patientData) {
                         </td>
                     </tr>
                    </table>
-                   <div class="input-field">
+                   <table>
+                    <tr>
+                      <td>
+                      <div class="input-field">
                         <input type="button" class="medical" onClick={sendUpdate} value="Send new Diagnosis" />
                          <br></br>
                        </div>
-                   </div>
+                      </td>
+                      <td>
+                      <div class="input-field">
+                        <input type="button" class="medical" onClick={()=>{navigate("/")}} value="Done" />
+                         <br></br>
+                       </div>
+                      </td>
+                    </tr>
+                   </table>
+                   </div>  
                 {/* {printMedicalHistory()} */}
             </div>
           </div>

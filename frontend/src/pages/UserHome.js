@@ -47,7 +47,7 @@ const UserHome=()=>{
     <h6 class="card-subtitle mb-2 text-muted">Make direct Appointment</h6>
     <p class="card-text">In case if you do not want to answer questions and directly do the doctor appointment. We advise you to answer the questions.</p>
     <div class="card-title">
-        <a onClick={()=>navigate("/bookAppointment")} href="">Book<BsBookmarkHeart/></a>
+        <a onClick={()=>navigate("/bookAppointment")} href="">Book <BsBookmarkHeart/></a>
     </div>
   </div>
 </div>
@@ -59,7 +59,7 @@ const UserHome=()=>{
     <h6 class="card-subtitle mb-2 text-muted">This is a must visit</h6>
     <p class="card-text">Just in case you developed a new allergy or you forgot to add any allergy</p>
     <div class="card-title">
-        <a onClick={()=>navigate("/userSiteReport")} href="">Attempt <TbUserQuestion/></a>
+        <a onClick={()=>navigate("/userQuestions")} href="">Attempt <TbUserQuestion/></a>
     </div>
   </div>
 </div> 

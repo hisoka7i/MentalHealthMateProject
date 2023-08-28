@@ -16,10 +16,10 @@ import com.demo.mhm.dto.UserCredentialDTO;
 import com.demo.mhm.model.Users;
 import com.demo.mhm.service.UserServiceI;
 
+
 @RequestMapping("/user")
 @RestController
 @CrossOrigin("*")
-
 public class UserController {
 	
 	@Autowired
