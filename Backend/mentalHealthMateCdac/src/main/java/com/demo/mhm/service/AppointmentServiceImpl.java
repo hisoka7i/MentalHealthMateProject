@@ -49,7 +49,7 @@ public class AppointmentServiceImpl implements AppointmentServiceI{
 		Users u = uo.get();
 		Doctor d = dO.get();
 		//int uAppointmentId, String dName, String dphoneno, Date time, String status, Users user2
-		Appointment ua = new Appointment(12,d.getDoctor_name(),d.getPhone_no(),new Date(),"false",u);
+		Appointment ua = new Appointment(12,d.getDoctor_name(),d.getPhone_no(),new Date(),false,u);
 		DoctorAppointment da =  new DoctorAppointment(123,u.getName(),new Date(),u.getPhoneno(),false,d);
 		
 		if(dar.save(da)!=null && uar.save(ua)!=null) {

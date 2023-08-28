@@ -24,7 +24,7 @@ private String patientName;
 private Date time;
 private String uPhone;
 
-private Boolean visitedStatus;
+private Boolean visitedStatus=false;
 @ManyToOne
 private Doctor doctor;
 public DoctorAppointment(int docAppointmentId, String patient_name, Date time, String uphone, Boolean visitedStatus,

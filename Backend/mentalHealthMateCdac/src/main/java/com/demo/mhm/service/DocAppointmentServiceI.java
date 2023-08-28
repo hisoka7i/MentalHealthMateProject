@@ -11,4 +11,6 @@ public interface DocAppointmentServiceI {
 
 	PatientAppointmentDTO findByname(String name);
 
+	boolean saveDiagnosis(String name, String diagnosis, String medication);
+
 }

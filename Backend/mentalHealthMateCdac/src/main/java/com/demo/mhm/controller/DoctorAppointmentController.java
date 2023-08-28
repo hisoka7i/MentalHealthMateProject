@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,10 @@ public class DoctorAppointmentController {
 	public ResponseEntity<?> getPatient(@PathVariable("name") String name){
 		//System.out.println(name);
 		return ResponseEntity.ok(Doc_AppointServiceImpl.findByname(name));
+	}
+	
+	@PostMapping("/patient/{name}/{diagnosis}/{medication}")
+	public ResponseEntity<?> getPatientDiagnosis(@PathVariable("name") String name,@PathVariable("diagnosis") String diagnosis,@PathVariable("medication") String medication){
+		return ResponseEntity.ok(Doc_AppointServiceImpl.saveDiagnosis(name,diagnosis,medication));
 	}
 }

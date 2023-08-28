@@ -1,5 +1,6 @@
 package com.demo.mhm.service;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +71,21 @@ public class DocAppointserviceImpl implements DocAppointmentServiceI{
 		//SiteGeneratedReport siteReport, SendMedicalHistoryDTO medicalHistory
 		PatientAppointmentDTO paDTO = new PatientAppointmentDTO(sgr,smhDTO);
 		return paDTO;
+	}
+
+
+
+	@Override
+	public boolean saveDiagnosis(String name, String diagnosis, String medication) {
+		// TODO Auto-generated method stub
+		Users u = ur.getByName(name);
+		MedicalHistory mh = mhr.getByUserId(u.getId());
+		Diagnosis d= new Diagnosis(0, diagnosis, new Date(), mh);
+		Medications m = new Medications(0, medication,d);
+		System.out.println(mh);
+		dr.save(d);
+		mr.save(m);
+		return true;
 	}
 	
 	

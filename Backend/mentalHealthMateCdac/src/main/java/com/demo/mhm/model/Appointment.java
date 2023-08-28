@@ -20,7 +20,7 @@ private int uAppointmentId;
 private String dName;
 private String dphoneNo;
 private Date time;
-private String status;
+private boolean status=false;
 @ManyToOne
 private Users user2;
 
@@ -28,7 +28,7 @@ private Users user2;
 public Appointment() {
 	super();
 }
-public Appointment(int uAppointmentId, String dName, String dphoneno, Date time, String status, Users user2) {
+public Appointment(int uAppointmentId, String dName, String dphoneno, Date time, boolean status, Users user2) {
 	super();
 	this.uAppointmentId = uAppointmentId;
 	this.dName = dName;
@@ -62,10 +62,10 @@ public Date getTime() {
 public void setTime(Date time) {
 	this.time = time;
 }
-public String getStatus() {
+public boolean getStatus() {
 	return status;
 }
-public void setStatus(String status) {
+public void setStatus(boolean status) {
 	this.status = status;
 }
 public Users getUser2() {
