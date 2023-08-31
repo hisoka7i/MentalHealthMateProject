@@ -4,9 +4,11 @@ import './styles/Register.css';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import axios from 'axios';
 import {URL} from '../config'
+import {useNavigate} from 'react-router';
 import NavBar from '../components/NavBar';
 
 const DoctorRegister = () =>{
+    const navigate = useNavigate();
     
     var doctor_id;
     var duserName="";

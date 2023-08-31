@@ -36,7 +36,7 @@ function showPayments(){
       <tr key={table.paymentId}>
       <th scope="row">{table.paymentId}</th>
       <td>{table.dpayment.patient_name}</td>
-      <td>{table.dpayment.time}</td>
+      <td>{table.dpayment.time.slice(0,10)}</td>
       <td>{table.amount}</td>
     </tr>
      );}
